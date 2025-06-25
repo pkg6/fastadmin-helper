@@ -22,13 +22,16 @@ class AddonImportTestDataCommand extends Command
 
     protected function execute(Input $input, Output $output)
     {
-        $name = $input->getOption('name') ?: '';
+        $name = $input->getOption('name');
+        if (empty($name)) {
+            $output->error('Addon name is required');
+            return;
+        }
         try {
             Service::importsql($name, 'testdata.sql');
-        } catch (AddonException $e) {
-            $output->error($e->getMessage());
-        } catch (Exception $e) {
+        }catch (Exception $e) {
             $output->error($e->getMessage());
         }
+        $output->info("import Successed!");
     }
 }
