@@ -1,0 +1,42 @@
+{
+  "name": "tp5er/fastadmin-helper",
+  "description": "Help improve fastadmin efficiency",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "chihqiang",
+      "email": "zhiqiang2033@gmail.com"
+    }
+  ],
+  "require-dev": {
+    "topthink/framework": "^5.0",
+    "topthink/think-captcha": "^1.0",
+    "topthink/think-queue": "^1.1",
+    "topthink/think-helper": "^1.0",
+    "fastadminnet/fastadmin-addons": "^1.4."
+  },
+  "autoload": {
+    "psr-4": {
+      "Tp5er\\FastadminHelper\\": "src/"
+    },
+    "files": [
+      "src/helper.php"
+    ]
+  },
+  "repositories": [
+    {
+      "type": "git",
+      "url": "https://gitee.com/fastadminnet/framework.git"
+    },
+    {
+      "type": "git",
+      "url": "https://gitee.com/fastadminnet/think-captcha.git"
+    }
+  ],
+  "config": {
+    "allow-plugins": {
+      "topthink/think-installer": true
+    }
+  }
+}
